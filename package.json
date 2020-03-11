@@ -1,0 +1,31 @@
+{
+  "name": "challenge",
+  "version": "1.0.0",
+  "description": "logger fn to display log messages in the DOM",
+  "main": "index.js",
+  "scripts": {
+    "app:setup": "npm run app:clean && npm i",
+    "app:clean": "rm -rf node_modules && rm -rf lib",
+    "app:serve": "npm run app:build && npm run app:server",
+    "app:build": "./node_modules/.bin/babel src --out-dir lib --source-maps",
+    "app:server": "python -m SimpleHTTPServer 8080",
+    "app:scss": "node-sass --watch scss -o css",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "abdelselouane",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/cli": "^7.8.4",
+    "@babel/core": "^7.8.7",
+    "@babel/plugin-transform-arrow-functions": "^7.8.3",
+    "@babel/plugin-transform-function-name": "^7.8.3",
+    "@babel/plugin-transform-parameters": "^7.8.7",
+    "@babel/plugin-transform-template-literals": "^7.8.3",
+    "@babel/preset-env": "^7.8.7",
+    "babel-preset-minify": "^0.5.1",
+    "node-sass": "^4.13.1"
+  },
+  "dependencies": {
+    "@babel/polyfill": "^7.8.7"
+  }
+}

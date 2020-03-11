@@ -1,0 +1,64 @@
+#result {
+  position: absolute; }
+
+.container {
+  display: flex;
+  flex-flow: row;
+  justify-content: center;
+  align-items: center;
+  height: 100%; }
+  .container .card {
+    font-size: 1em;
+    background: #3498db;
+    -moz-box-shadow: inset 0 0 10px #ccc;
+    -webkit-box-shadow: inset 0 0 10px #ccc;
+    box-shadow: inset 0 0 10px #ccc;
+    min-height: 100px;
+    height: 100px;
+    width: 100px;
+    margin: 0 auto;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    align-items: flex-start; }
+  .container .card:hover {
+    height: 200px;
+    width: 200px; }
+  .container .badge {
+    background-color: #fff;
+    border: 1px solid #2ecc71;
+    color: #2ecc71;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    border-radius: 1em;
+    font-size: 1em;
+    font-weight: bold;
+    height: 1em;
+    line-height: 1em;
+    width: 1em;
+    visibility: hidden;
+    display: flex;
+    left: -0.5em;
+    top: -0.5em; }
+  .container .text-box {
+    align-self: center;
+    position: relative;
+    top: 0;
+    display: flex;
+    justify-content: center; }
+  .container .text-label {
+    white-space: nowrap;
+    position: absolute;
+    bottom: calc( -2.25em); }
+  @media (max-width: 500px) {
+    .container .badge {
+      visibility: visible; }
+    .container .text-box {
+      visibility: hidden; }
+    .container .card {
+      background: #f1c40f; }
+    .container .card:hover {
+      height: 100px;
+      width: 100px; } }

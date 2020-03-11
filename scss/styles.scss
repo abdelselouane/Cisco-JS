@@ -1,0 +1,97 @@
+$primary-color-100: #3498db;
+$primary-color-200: #fff;
+$secondary-color-100: #2ecc71;
+$secondary-color-200: #f1c40f;
+$tertiary-color-100: #ccc;
+$tertiary-color-200: #fff;
+$card-width: 100px;
+$card-height: 100px;
+$center: center;
+$unit: 1em;
+
+@function calc-double-size($val) {
+    @return $val * 2;
+}
+
+#result {
+    position: absolute;
+}
+
+.container {
+    display: flex;
+    flex-flow: row;
+    justify-content: $center;
+    align-items: $center;
+    height: 100%;
+        
+    .card {
+        font-size: $unit;
+        background: $primary-color-100;
+        -moz-box-shadow: inset 0 0 10px $tertiary-color-100;
+        -webkit-box-shadow: inset 0 0 10px $tertiary-color-100;
+        box-shadow: inset 0 0 10px $tertiary-color-100; 
+        min-height: $card-height;
+        height: $card-height;
+        width: $card-height;
+        margin: 0 auto;
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+
+    .card:hover {
+        height: calc-double-size($card-height);
+        width: calc-double-size($card-width);
+    }
+
+    .badge {
+        background-color: $tertiary-color-200;
+        border: 1px solid $secondary-color-100;
+        color: $secondary-color-100;
+        flex-flow: row nowrap;
+        justify-content: $center;
+        align-items: $center;
+        position: relative;
+        border-radius: $unit;
+        font-size: $unit;
+        font-weight: bold;
+        height: $unit;
+        line-height: $unit;
+        width: $unit;
+        visibility: hidden;
+        display: flex;
+        left: #{$unit/2 * -1};
+        top: #{$unit/2 * -1};
+    }
+
+    .text-box {
+        align-self: $center;
+        position: relative;
+        top: 0;
+        display: flex;
+        justify-content: $center;
+    }
+
+    .text-label {
+        white-space: nowrap;
+        position: absolute;
+        bottom: calc( #{($unit * -1) - 1.250em} );
+    }
+
+    @media (max-width: 500px) { 
+        .badge {
+            visibility: visible;
+        }
+        .text-box {
+            visibility: hidden;
+        }
+        .card {
+            background: $secondary-color-200;
+        }
+        .card:hover {
+            height: $card-height;
+            width: $card-width;
+        }
+    }
+}
